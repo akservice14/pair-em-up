@@ -1,0 +1,77 @@
+Audio effects
+
+Cell selection	✅	Immediate feedback
+Cell deselection	✅	Immediate feedback
+Valid pair match	✅	Positive reinforcement
+Invalid pair match	✅	Error/negative feedback
+Assist tool usage	✅	Confirms tool activation
+Game start	✅	Optional intro/confirmation
+Game end (win/lose)	✅	Distinct chime for win/lose
+
+| Event / Trigger              | Purpose / Signal           | File Name       |
+| ---------------------------- | -------------------------- | --------------- |
+| Cell selection / deselection | Feedback for interaction   | `select`        |
+| Valid pair match             | Positive feedback          | `pair-success`  |
+| Invalid pair match           | Negative feedback          | `pair-fail`     |
+| Any assist tool used         | Confirms assist activation | `assist`        |
+| Game start                   | Start game sound           | `game-start`    |
+| Game end (win)               | Win game sound             | `win`           |
+| Game end (lose)              | Lose game sound            | `lose`          |
+
+
+Visual effects:
+
+1. Cell Selection / Pairing Feedback
+Requirement: “Clear visual indication of selected cells (highlighting, animation, etc.)”
+Status: ❌ Missing
+What’s missing:
+No highlight when a tile is selected
+No animation or border change for selection/deselection
+No visual feedback for valid/invalid pairs
+
+2. Valid / Invalid Pair Feedback
+Requirement: “Animation effects: Smooth transitions and visual feedback”
+Status: ❌ Missing
+What’s missing:
+No color change, fade, or animation for matched pairs
+No shake or red highlight for invalid pair
+No transitions to make removal smooth
+
+3. Assist Tool Usage Feedback
+Requirement: “Interactive feedback: Build visual and audio feedback systems”
+Status: ❌ Missing
+What’s missing:
+No animation or highlight when an assist button is used
+Only static counters exist
+
+4. Game Start / End Effects
+Requirement: “Visual feedback for game start / end”
+Status: ❌ Missing
+What’s missing:
+No fade-in or entrance animation for the game grid on start
+No highlight or color effect on game end (win/lose)
+
+5. Modals / Settings
+Modals exist, but visual feedback is minimal:
+❌ No transition or fade-in for showing/hiding modals
+❌ No animation for the cross button hover or modal appearance
+Requirement: “Smooth transitions and visual feedback systems”
+
+
+START HERE
+
+6. Score / Timer Updates
+Requirement: “Immediate updates, smooth UX”
+Status: ⚠️ Partial
+What’s missing:
+No color flash or animation when score increases
+No transition effects on timer change
+
+7. Overall UX / Interactive Feedback
+Requirement: “Visual combo indicators, interactive feedback, theme switching”
+Status: ❌ Mostly missing
+Missing features include:
+Tile highlight on hover or active selection
+Smooth fade-out for removed tiles
+Temporary color or scale effect for success/failure
+Any transition for dark/light theme toggle

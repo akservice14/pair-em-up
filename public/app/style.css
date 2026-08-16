@@ -1,0 +1,961 @@
+/* all CSS */
+
+/* COLORS
+
+Background (main)
+#F5F7FA — soft light gray
+
+Surface / cards / panels
+#FFFFFF — clean white
+
+Primary text
+#1F2937 — dark slate
+
+Secondary text / labels
+#6B7280 — muted gray
+
+Primary action / accent
+#3B82F6 — calm blue (trust + focus)
+
+Success / positive feedback
+#10B981 — soft green
+
+Warning / error / danger
+#EF4444 — restrained red */
+
+/* APP */
+:root {
+  --bg-main: #F5F7FA;
+  --bg-surface: #FFFFFF;
+  --text-main: #1F2937;
+  --text-muted: #6B7280;
+  --accent-primary: #3B82F6;
+  --accent-success: #10B981;
+  --accent-danger: #EF4444;
+}
+
+/* add to body */
+.dark-mode {
+  --bg-main: #1F2937;
+  --bg-surface: #374151;
+  --text-main: #F5F7FA;
+  --text-muted: #9CA3AF;
+  --accent-primary: #3B82F6;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background-color: var(--bg-main);
+}
+
+.app {
+  margin: auto;
+  min-width: 380px;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  color: var(--text-main);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+.app__div-views {
+  display: flex;
+  flex-direction: column;
+}
+
+/* SHARED */
+.is-hidden {
+  display: none;
+}
+
+.is-hidden-smooth {
+  opacity: 0;
+  transform: scale(0.98);
+  pointer-events: none;
+}
+
+.start-view.is-hidden,
+.game-view.is-hidden,
+.finish-view.is-hidden {
+  display: none;
+}
+
+.btn {
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  min-width: 8rem;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.header__logo {
+  height: auto;
+  width: 120px;
+  display: block;
+}
+
+/* START */
+.start-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+.start-view__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: var(--text-main);
+  text-transform: uppercase;
+}
+
+.start-view__author {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.start-view__author-link {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.start-view__author-link:hover {
+  text-decoration: underline;
+}
+
+.difficulty-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.difficulty-selector__btn {
+  flex: 1;
+  color: var(--bg-surface);
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.start-view__btn--continue {
+  color: var(--bg-surface);
+  background-color: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.start-view__btn--results {
+  color: var(--accent-primary);
+  background-color: var(--bg-surface);
+  border-color: var(--accent-primary);
+}
+
+/* GAME */
+
+.game-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+.game-view__txt-container {
+  display: flex;
+  gap: 6rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-main);
+  padding: 1rem 0;
+  z-index: 10;
+}
+
+.game-view__txt-mode,
+.game-view__txt-score,
+.game-view__txt-timer {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.game-view__txt-score {
+  white-space: nowrap;
+}
+
+.game-view__grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  background-color: var(--text-main);
+  gap: 0.1rem;
+  padding: 0.2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.tile {
+  background-color: var(--bg-surface);
+  min-width: 3rem;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.game-view__btn-container {
+  position: sticky;
+  bottom: 0;
+  background-color: var(--bg-main);
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.control-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.control-buttons__btn {
+  flex: 1;
+  color: var(--bg-surface);
+  background-color: var(--accent-success);
+  border-color: var(--accent-success);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.assist-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.assist-buttons__btn-container {
+  position: relative;
+}
+
+.assist-buttons__counter {
+  position: absolute;
+  top: -0.3rem;
+  right: -0.3rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  background-color: var(--accent-primary);
+  color: var(--bg-surface);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FINISH */
+
+.finish-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+.finish-view__txt {
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.results__txt {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Base — layout only */
+.last-five-games__grid {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.1rem;
+
+  background-color: var(--bg-surface);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+/* State modifiers */
+.last-five-games__grid--hidden {
+  display: none;
+}
+
+.last-five-games__grid--visible {
+  display: grid;
+}
+
+.last-five-games__row {
+  min-width: 5rem;
+  max-width: 10rem;
+  aspect-ratio: 1 / 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+}
+
+.last-five-games__row--header {
+  font-weight: 600;
+  background-color: var(--text-main);
+  color: var(--bg-surface);
+}
+
+.last-five-games__txt {
+  text-align: center;
+  max-width: 6.5rem;
+  white-space: pre-wrap;
+  overflow-wrap: break-word
+}
+
+
+/* Visual feedback */
+
+/* Selected/Deselected/Assessment for cells */
+
+/* Tile Selection */
+.tile--selected {
+  background-color: var(--accent-primary);
+  color: var(--bg-surface);
+  border: 2px solid var(--accent-primary);
+  transform: scale(1.05);
+  transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+/* Correct Pair / Matched Tiles */
+.tile--matched {
+  background-color: var(--accent-success);
+  color: var(--bg-surface);
+  border: 2px solid var(--accent-success);
+  opacity: 0.6;
+  transform: scale(0.9);
+  transition: background-color 0.3s, opacity 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+/* Incorrect Pair / Wrong Tiles */
+.tile--wrong {
+  background-color: var(--accent-danger);
+  color: var(--bg-surface);
+  border: 2px solid var(--accent-danger);
+  transform: scale(1.1);
+  transition: background-color 0.2s, transform 0.2s, border-color 0.2s;
+  animation: shake 0.3s ease;
+}
+
+/* Keyframes for wrong tile shake */
+@keyframes shake {
+  0% { transform: translateX(0) scale(1.1); }
+  25% { transform: translateX(-3px) scale(1.1); }
+  50% { transform: translateX(3px) scale(1.1); }
+  75% { transform: translateX(-3px) scale(1.1); }
+  100% { transform: translateX(0) scale(1.1); }
+}
+
+/* All button pressed */
+.btn {
+  transition: transform 0.15s, filter 0.15s;
+}
+.btn:hover {
+  filter: brightness(0.9);
+}
+.btn:active {
+  filter: brightness(0.8);
+  transform: scale(0.95);
+}
+
+/* Assist buttons pressed */
+.assist-buttons__btn {
+  transition: box-shadow 0.15s;
+}
+.assist-buttons__btn:active {
+  transform: scale(0.95);
+  filter: brightness(1.1);
+  box-shadow: 0 0 8px var(--accent-primary);
+}
+
+/* Start Game */
+.game-view__grid {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.game-view__grid.grid--show {
+  opacity: 1;
+  transform: scale(1);
+}
+/* End Game */
+.grid--win {
+  background-color: var(--accent-success);
+  transition: background-color 0.3s ease;
+}
+.grid--lose {
+  background-color: var(--accent-danger);
+  transition: background-color 0.3s ease;
+}
+
+/* Score update animation */
+.game-view__txt-score {
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+.game-view__txt-score.is-updating {
+  color: var(--accent-success);
+  transform: scale(1.15);
+}
+
+/* Timer smooth update */
+.game-view__txt-timer {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.game-view__txt-timer.is-ticking {
+  opacity: 0.6;
+  transform: translateY(-2px);
+}
+
+/* Tile highlight */
+.tile {
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+.tile:not(.tile--selected):hover {
+  background-color: var(--bg-main);
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* Smooth fade-out for removed tiles */
+.tile--removing {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Transitions for screens and modals */
+.start-view,
+.game-view,
+.finish-view {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Dark mode smooth change */
+body,
+.app,
+.start-view,
+.game-view,
+.finish-view,
+.modal-layer,
+.settings-modal,
+.reset-confirm-modal {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* MODALS */
+.modal-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+
+  transition: opacity 0.25s ease;
+  z-index: 1000;
+}
+
+.modal-layer--closed {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-layer--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-layer__wrapper {
+  position: relative;
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Close button */
+.modal-layer__btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.modal-layer__btn:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.modal-layer__btn-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* shared modal content */
+
+.settings-modal,
+.reset-confirm-modal,
+.last-five-games__grid {
+  position: relative;
+}
+
+.modal-layer__txt,
+.settings-modal,
+.reset-confirm-modal {
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+
+  width: 100%;
+  min-width: 15rem;
+  max-width: 30rem;
+
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.modal-layer__txt,
+.settings-modal,
+.reset-confirm-modal{
+  display: none;
+}
+
+/* No history messsage */
+.modal-layer__txt--visible {
+  display: flex;
+}
+
+.modal-layer__txt {
+  justify-content: center;
+}
+
+/* settings */
+
+.settings-modal {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settings-modal.settings-modal--active {
+  display: flex;
+}
+
+.settings-modal__selector {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 0.5rem;
+  background-color: var(--bg-main);
+  border-radius: 0.25rem;
+}
+
+.settings-modal__checkbox {
+  cursor: pointer;
+}
+
+.settings-modal__span {
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+
+/* reset */
+
+.reset-confirm-modal {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reset-confirm-modal.reset-confirm-modal--active {
+  display: flex;
+}
+
+.reset-confirm-modal__question {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.reset-confirm-modal__text {
+  font-size: 1rem;
+}
+
+.reset-confirm-modal__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.reset-confirm-modal__yes-button {
+  background-color: var(--accent-danger);
+  border-color: var(--accent-danger);
+  color: var(--bg-surface);
+}
+
+.reset-confirm-modal__no-button {
+  background-color: var(--bg-surface);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+
+/* MEDIA */
+
+/* MOBILE & TABLET MEDIA QUERIES */
+
+/* Tablet (481px - 768px) */
+@media (max-width: 768px) {
+  /* Settings button - replace text with gear icon */
+  .header__btn-settings {
+    min-width: 44px;
+    width: 44px;
+    padding: 0.5rem;
+  }
+
+  .header__btn-text {
+    display: none;
+  }
+
+  .header__btn-icon {
+    display: inline-block;
+    font-size: 1.5rem;
+  }
+
+  .start-view__title {
+    font-size: 2rem;
+  }
+
+  .game-view__txt-container {
+    gap: 2rem;
+  }
+
+  .game-view__txt-mode,
+  .game-view__txt-score,
+  .game-view__txt-timer {
+    font-size: 1.25rem;
+  }
+
+  .tile {
+    font-size: 1.1rem;
+  }
+
+  .assist-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .assist-buttons__btn {
+    width: 100%;
+  }
+
+  .last-five-games__grid {
+    padding: 1rem;
+  }
+
+  .last-five-games__row {
+    min-width: 4rem;
+    font-size: 0.9rem;
+  }
+
+  .last-five-games__txt {
+    font-size: 0.9rem;
+  }
+}
+
+/* Settings button for desktop (>768px) */
+@media (min-width: 769px) {
+  .header__btn-text {
+    display: inline-block;
+  }
+
+  .header__btn-icon {
+    display: none;
+  }
+}
+
+/* Mobile (380px - 480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 8px;
+  }
+
+  .header__logo {
+    width: 100px;
+  }
+
+  .start-view {
+    padding: 1.5rem 0.75rem;
+    gap: 1.25rem;
+  }
+
+  .start-view__title {
+    font-size: 1.75rem;
+  }
+
+  .start-view__author {
+    font-size: 0.85rem;
+  }
+
+  .difficulty-selector {
+    gap: 0.4rem;
+  }
+
+  .difficulty-selector__btn {
+    min-width: 6rem;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .btn {
+    min-width: 6rem;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .game-view {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .game-view__txt-container {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .game-view__txt-mode,
+  .game-view__txt-score,
+  .game-view__txt-timer {
+    font-size: 0.95rem;
+  }
+
+  .game-view__grid {
+    gap: 0.08rem;
+    padding: 0.15rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .tile {
+    min-width: 2.25rem;
+    font-size: 0.9rem;
+  }
+
+  .game-view__btn-container {
+    padding: 0.75rem 0.5rem;
+    gap: 0.75rem;
+  }
+
+  .control-buttons {
+    gap: 0.4rem;
+  }
+
+  .control-buttons__btn {
+    min-width: 5.5rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .assist-buttons {
+    gap: 0.4rem;
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .assist-buttons__btn {
+    width: 100%;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .assist-buttons__counter {
+    width: 1.1rem;
+    height: 1.1rem;
+    font-size: 0.65rem;
+  }
+
+  .finish-view {
+    padding: 1.5rem 0.75rem;
+    gap: 1.25rem;
+  }
+
+  .finish-view__txt {
+    font-size: 0.9rem;
+  }
+
+  .results {
+    padding: 1rem 0.5rem;
+  }
+
+  .results__txt {
+    font-size: 1.1rem;
+  }
+
+  .last-five-games__grid {
+    gap: 0.06rem;
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+
+  .last-five-games__row {
+    min-width: 3rem;
+    max-width: 4rem;
+    font-size: 0.7rem;
+    padding: 0.2rem;
+  }
+
+  .last-five-games__row--header {
+    font-size: 0.65rem;
+  }
+
+  .last-five-games__txt {
+    font-size: 0.7rem;
+    max-width: 3.5rem;
+  }
+
+  .modal-layer {
+    padding: 0.75rem;
+  }
+
+  .modal-layer__wrapper {
+    padding: 1rem;
+  }
+
+  .modal-layer__txt,
+  .settings-modal,
+  .reset-confirm-modal {
+    padding: 1rem;
+    min-width: 12rem;
+  }
+
+  .modal-layer__txt {
+    font-size: 0.85rem;
+  }
+
+  .settings-modal__span {
+    font-size: 0.85rem;
+  }
+
+  .reset-confirm-modal__text {
+    font-size: 0.9rem;
+  }
+
+  .reset-confirm-modal__buttons {
+    gap: 0.4rem;
+  }
+
+  .reset-confirm-modal__yes-button,
+  .reset-confirm-modal__no-button {
+    min-width: 5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra small mobile (380px) */
+@media (max-width: 400px) {
+  .start-view__title {
+    font-size: 1.5rem;
+  }
+
+  .game-view__txt-container {
+    gap: 0.75rem;
+  }
+
+  .game-view__txt-mode,
+  .game-view__txt-score,
+  .game-view__txt-timer {
+    font-size: 0.85rem;
+  }
+
+  .tile {
+    min-width: 2rem;
+    font-size: 0.85rem;
+  }
+
+  .last-five-games__grid {
+    padding: 0.4rem;
+  }
+
+  .last-five-games__row {
+    min-width: 2.75rem;
+    max-width: 3.5rem;
+    font-size: 0.65rem;
+  }
+
+  .last-five-games__row--header {
+    font-size: 0.6rem;
+  }
+
+  .last-five-games__txt {
+    font-size: 0.65rem;
+    max-width: 3rem;
+  }
+}

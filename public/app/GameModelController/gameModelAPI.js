@@ -1,0 +1,28 @@
+// gameModelAPI.js
+
+export const gameModelAPI = (model) => ({
+  getStatePrimitives: () => model.getStatePrimitives(),
+  getGameBoardCopy: () => model.getGameBoardCopy(),
+  getSelectedPairCopy: () => model.getSelectedPairCopy(),
+  getLastMoveCopy: () => model.getLastMoveCopy(),
+  isAssistButtonsUsed: () => model.isAssistButtonsUsed(),
+  setHasUserSaved: (value) => model.setHasUserSaved(value),
+  updateElapsedTime: () => model.updateElapsedTime(),
+  initGameBoard: (board) => model.initGameBoard(board),
+  addNewCellsToBoard: (board, lastCell) => model.addNewCellsToBoard(board, lastCell),
+  shuffleValuesInBoard: (board, lastCell) => model.shuffleValuesInBoard(board, lastCell),
+  addSelectedCell: (coord) => model.addSelectedCell(coord),
+  deleteUnselectedCell: (coord) => model.deleteUnselectedCell(coord),
+  clearSelectedPair: () => model.clearSelectedPair(),
+  setNullInPair: (pair) => model.setNullInPair(pair),
+  setNullInOneCell: (coord) => model.setNullInOneCell(coord),
+  saveLastMove: () => model.saveLastMove(),
+  restoreLastMove: () => model.restoreLastMove(),
+  updateScore: (num) => model.updateScore(num),
+  updateHints: (hints) => model.updateHints(hints),
+  incrementMoves: () => model.incrementMoves(),
+  saveByUser: () => model.saveByUser(),
+  setAssistButtonCounter: (name, value) => model.setAssistButtonCounter(name, value),
+  decrementAssistButtonCounter: (name) => model.decrementAssistButtonCounter(name),
+  setClassicArrayIndex: (value) => model.setClassicArrayIndex(value),
+});

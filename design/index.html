@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../public/app/style.css">
+  <title>Document</title>
+</head>
+<body class="">
+  <div class="app">
+    <header class="header">
+      <div class="header__logo"><span>pair em up</span></div>
+      <button class="btn header__btn">Settings</button>
+    </header>
+    <div class="app__div-views">
+      <!-- START -->
+      <div class="start-view is-hidden">
+        <div class="start-view__title"><h1>pair em up</h1></div>
+        <div class="start-view__author">
+          <a class="start-view__author-link" href="https://github.com/username" target="_blank">Author's GitHub</a>
+        </div>
+        <div class="difficulty-selector">
+          <!-- styled as a segmented control -->
+          <button class="btn difficulty-selector__btn">Classic</button>
+          <button class="btn difficulty-selector__btn">Random</button>
+          <button class="btn difficulty-selector__btn">Chaotic</button>
+        </div>
+        <button class="btn start-view__btn start-view__btn--continue">Continue</button>
+        <button class="btn start-view__btn start-view__btn--results">Results</button>
+      </div>
+      <!-- GAME -->
+      <div class="game-view">
+        <div class="game-view__txt-container">
+          <div class="game-view__txt-mode"><h2>Mode</h2></div>
+          <div class="game-view__txt-score"><h2>50 / 100</h2></div>
+          <div class="game-view__txt-timer"><h2>00:00</h2></div>
+        </div>
+        <div class="game-view__grid">
+          <div class="tile"><span class="tile__txt">1</span></div>
+          <div class="tile"><span class="tile__txt">2</span></div>
+          <div class="tile"><span class="tile__txt">3</span></div>
+          <div class="tile"><span class="tile__txt">4</span></div>
+          <div class="tile"><span class="tile__txt">5</span></div>
+          <div class="tile"><span class="tile__txt">6</span></div>
+          <div class="tile"><span class="tile__txt">7</span></div>
+          <div class="tile"><span class="tile__txt">8</span></div>
+          <div class="tile"><span class="tile__txt">9</span></div>
+          <div class="tile"><span class="tile__txt">1</span></div>
+          <div class="tile"><span class="tile__txt">2</span></div>
+          <div class="tile"><span class="tile__txt">3</span></div>
+          <div class="tile"><span class="tile__txt">4</span></div>
+          <div class="tile"><span class="tile__txt">5</span></div>
+          <div class="tile"><span class="tile__txt">6</span></div>
+          <div class="tile"><span class="tile__txt">7</span></div>
+          <div class="tile"><span class="tile__txt">8</span></div>
+          <div class="tile"><span class="tile__txt">9</span></div>
+          <div class="tile"><span class="tile__txt">1</span></div>
+          <div class="tile"><span class="tile__txt">2</span></div>
+          <div class="tile"><span class="tile__txt">3</span></div>
+          <div class="tile"><span class="tile__txt">4</span></div>
+          <div class="tile"><span class="tile__txt">5</span></div>
+          <div class="tile"><span class="tile__txt">6</span></div>
+          <div class="tile"><span class="tile__txt">7</span></div>
+          <div class="tile"><span class="tile__txt">8</span></div>
+          <div class="tile"><span class="tile__txt">9</span></div>
+        </div>
+        <div class="game-view__btn-container">
+          <div class="control-buttons">
+            <button class="btn control-buttons__btn">Reset</button>
+            <button class="btn control-buttons__btn">Save</button>
+            <button class="btn control-buttons__btn">Continue</button>
+          </div>
+          <div class="assist-buttons">
+            <div class="assist-buttons__btn-container">
+              <button class="btn assist-buttons__btn">Hints</button>
+              <span class="assist-buttons__counter">5+</span>
+            </div>
+            <div class="assist-buttons__btn-container">
+              <button class="btn assist-buttons__btn">Revert</button>
+              <span class="assist-buttons__counter">1</span>
+            </div>
+            <div class="assist-buttons__btn-container">
+              <button class="btn assist-buttons__btn">Add</button>
+              <span class="assist-buttons__counter">10</span>
+            </div>
+            <div class="assist-buttons__btn-container">
+              <button class="btn assist-buttons__btn">Shuffle</button>
+              <span class="assist-buttons__counter">5</span>
+            </div>
+            <div class="assist-buttons__btn-container">
+              <button class="btn assist-buttons__btn">Eraser</button>
+              <span class="assist-buttons__counter">5</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FINISH -->
+      <div class="finish-view is-hidden">
+        <div class = "results">
+            <div class="results__txt"><span>Final Outcome: Win / Loss</span></div>
+            <div class="results__txt"><span>User Message</span></div>
+            <div class="results__txt"><span>Final Score</span></div>
+            <div class="results__txt"><span>Completion time: MM:SS</span></div>
+        </div>
+        <div class="finish-view__txt"><span>no history yet</span></div>
+        <div class="last-five-games__grid">
+          <div class="last-five-games__row last-five-games__row--header"><span class="last-five-games__txt">Date</span></div>
+          <div class="last-five-games__row last-five-games__row--header"><span class="last-five-games__txt">Mode</span></div>
+          <div class="last-five-games__row last-five-games__row--header"><span class="last-five-games__txt">Result</span></div>
+          <div class="last-five-games__row last-five-games__row--header"><span class="last-five-games__txt">Score</span></div>
+          <div class="last-five-games__row last-five-games__row--header"><span class="last-five-games__txt">Time</span></div>
+
+          <div class="last-five-games__row"><span class="last-five-games__txt">1</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">1</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">1</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">1</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">1</span></div>
+
+          <div class="last-five-games__row"><span class="last-five-games__txt">2</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">2</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">2</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">2</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">2</span></div>
+
+          <div class="last-five-games__row"><span class="last-five-games__txt">3</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">3</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">3</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">3</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">3</span></div>
+
+          <div class="last-five-games__row"><span class="last-five-games__txt">4</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">4</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">4</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">4</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">4</span></div>
+
+          <div class="last-five-games__row"><span class="last-five-games__txt">5</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">5</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">5</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">5</span></div>
+          <div class="last-five-games__row"><span class="last-five-games__txt">5</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- MODALS -->
+    <div class="modal-layer" hidden>
+      <div class="settings-modal">
+        <div class="selector">
+          <input class="selector__input" type="checkbox">
+          <span>Dark mode</span>
+        </div>
+        <div class="selector">
+          <input class="selector__input" type="checkbox">
+          <span class="selector__txt">Audio effects</span>
+        </div>
+      </div>
+      <div class="history-modal">
+      </div>
+    </div>
+    <div class="toast-layer"></div>
+  </div>
+</body>
+</html>
+

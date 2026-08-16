@@ -1,0 +1,11 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" fill="#2D3748" rx="8"/>
+  
+  <!-- Two large numbers representing pairs -->
+  <text x="18" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#4299E1">3</text>
+  <text x="46" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#48BB78">3</text>
+  
+  <!-- Simple connection line -->
+  <path d="M 24 30 Q 32 22 40 30" stroke="#ED8936" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>
