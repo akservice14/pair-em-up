@@ -4,6 +4,7 @@ A number-matching puzzle game. Clear the grid by removing valid pairs and reach 
 
 ## How to play
 
+https://github.com/akservice14/pair-em-up
 Pick a mode, then click two numbers to remove them.
 
 **A pair is valid when the numbers are:**
